@@ -1,0 +1,106 @@
+/*Tarea 1:
+Crea una variable con el nombre input, para almacenar la frase que quieras.*/
+
+let input = "Ya Doli con el padre han encontrado a su querido hijo";
+
+/*Tarea 2:
+En el mar, aparte que la vida es mÃ¡s sabrosa, solo hablan con las vocales 
+â€œaâ€, â€œeâ€, â€œiâ€, â€œoâ€ y â€œuâ€. Con estas letras minÃºsculas, crea una matriz 
+llamada vowels. Esta matriz no se actualizarÃ¡, asÃ­ que asegÃºrate de elegir 
+la palabra clave de declaraciÃ³n adecuada.*/
+
+const vowels = [
+  "aaaaa",
+  "eeeee",
+  "iiiii",
+  "ooooo",
+  "uuuuu",
+]; /*escribí estas ya que el texto estaba corrupto y asumo que estas funcionan*/
+
+/*Tarea 3:
+Crea una variable llamada resultArrayy configÃºrala como una 
+matriz vacÃ­a: []. Esto servirÃ¡ como lugar para almacenar las vocales de 
+la cadena input.*/
+
+let resultArrayy = [];
+
+/*Tarea 4:
+Crea un bucle para recorrer cada letra de la variable input. 
+En un paso posterior, compararemos cada letra con nuestra matriz vowels.
+
+Tarea 5:
+Para comprobar tu trabajo, registra la posiciÃ³n numerada del iterador 
+dentro del bucle for y ejecuta tu cÃ³digo. Esto deberÃ­a contar la cantidad 
+de caracteres en tu cadena input.
+Comenta el cÃ³digo cuando hayas comprobado su buen funcionamiento.
+
+Tarea 6:
+Crea un bucle for anidado dentro del bucle for que acabas de escribir. 
+Haz que el bucle interno recorra la matriz vowels cada vez que se ejecute 
+el bucle externo.
+
+Esto le permitirÃ¡ comprobar cada letra input con todos los elementos vowels 
+durante cada iteraciÃ³n.
+
+Tarea 7:
+Para comprobar tu trabajo, registra las posiciones del nÃºmero de iteradores 
+dentro del forbucle interno y ejecuta tu cÃ³digo. 
+DeberÃ­as ver 0 hasta 4 repetidamente porque vowels tiene 5 elementos.
+
+Tarea 8:
+Dentro del segundo for loop, escribe un bloque de cÃ³digo que compare
+las letras ingresadas en input y la matriz vowels.
+Para revisar que todo funcione correctamente, muestra en pantalla
+las coincidencias de letras.
+
+Tarea 9:
+Ahora, en lugar de simplemente mostrar las letras, agrÃ©guelas a 
+la matriz de resultados.
+Para comprobar su trabajo, utiliza console.log() para mostrar resultArray.
+Las letras que registrÃ³ en la consola en el paso 8 deberiÃ¡n estar
+incluidas en su archivo resultArray.
+
+Tarea 10:
+En el mar se duplican las e y las u.
+Escribe una declarciÃ³n if que verifique si cada letra de la cadena 
+input es igual a 'e'.  Si es asÃ­, utiliza el mÃ©todo push() para agregar
+input[i] a resultArray.
+Esta declaraciÃ³n debe estar antes del bucle for interno, dentro del
+bucle for externo.  Esto se debe a que solo desea realizar esta
+verificaciÃ³n una vez por cada letra del input.
+
+Tarea 11:
+A continuaciÃ³n duplica la u.
+
+*/
+
+for (let i = 0; i < input.length; i++) {
+  if (input[i] === "e" || input[i] === "u") {
+    resultArrayy.push(input[i]);
+  }
+  for (let j = 0; j < vowels.length; j++) {
+    if (vowels[j].includes(input[i])) {
+      resultArrayy.push(vowels[j]);
+    }
+  }
+}
+
+/*Tarea 12:
+En la parte inferior del programa, registre el resultArray en la consola. */
+
+console.log(resultArrayy);
+
+/*Tarea 13:
+Coloca en mayÃºsculas la matriz resultArray y  juntalos como una cadena.
+Declara una variable resultString que une nuestro trabajo en resultArray
+en una sola cadena y pone en mayÃºsculas todas las letras.
+
+Tarea 14:
+Ingresa la frase "",
+la traducciÃ³n deberÃ­a ser: AOIOEEAAEEOAOAUUUUEEIOIO  
+
+OBSERVACION: NO ME DIÓ LO MISMO PORQUE MI VALOR DE VOWELS ES DIFERENTE YA QUE LOS CARACTERES ERAN ILEGIBLES*/
+
+const resultadoString = resultArrayy.join("").toUpperCase();
+
+console.log(resultadoString);
